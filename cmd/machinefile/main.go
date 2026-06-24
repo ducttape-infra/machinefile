@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	machinefile "github.com/gbraad-redhat/machinefile/pkg/machinefile"
+	machinefile "github.com/machinefile/machinefile/pkg/machinefile"
 )
 
 const(
