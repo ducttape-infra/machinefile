@@ -1,4 +1,4 @@
-module github.com/machinefile/machinefile
+module github.com/ducttape-infra/machinefile
 
 go 1.23.4
 

@@ -1,7 +1,7 @@
 Machinefile
 ===========
 
-[![Machinefile build](https://github.com/gbraad-redhat/machinefile/actions/workflows/build-process.yml/badge.svg)](https://github.com/gbraad-redhat/machinefile/actions/workflows/build-process.yml) [![Machinefile test](https://github.com/gbraad-actions/machinefile-executor-action/actions/workflows/build-process.yml/badge.svg)](https://github.com/gbraad-actions/machinefile-executor-action/actions/workflows/build-process.yml) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/machinefile/machinefile/)
+[![Machinefile build](https://github.com/ducttape-infra/machinefile/actions/workflows/build-process.yml/badge.svg)](https://github.com/ducttape-infra/machinefile/actions/workflows/build-process.yml) [![Machinefile test](https://github.com/gbraad-actions/machinefile-executor-action/actions/workflows/build-process.yml/badge.svg)](https://github.com/gbraad-actions/machinefile-executor-action/actions/workflows/build-process.yml) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ducttape-infra/machinefile/)
 
 A simple executor that allows you to run `Dockerfile`/`Containerfile` commands directly on the host system without using Docker, Podman or any other container engine. It's useful for executing build commands in a predictable environment or setting up development tools. The Machinefile executor tool parses the Dockerfile and executes the commands on the local or remote host system. 
 
@@ -85,7 +85,7 @@ To incorporate this in your build process, you can use the [Machinfile executor]
 
 ## Development
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/gbraad-redhat/machinefile)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ducttape-infra/machinefile)
 
 
 

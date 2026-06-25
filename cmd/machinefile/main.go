@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	machinefile "github.com/machinefile/machinefile/pkg/machinefile"
+	machinefile "github.com/ducttape-infra/machinefile/pkg/machinefile"
 )
 
 const(
