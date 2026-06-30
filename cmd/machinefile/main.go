@@ -11,10 +11,9 @@ import (
 	machinefile "github.com/ducttape-infra/machinefile/pkg/machinefile"
 )
 
-const(
-	VERSION = "0.9.0"
-	DATE_FORMAT = "2006-01-02 15:04:05"
-)
+var version = "dev"
+
+const DATE_FORMAT = "2006-01-02 15:04:05"
 
 func main() {
 	// Help flag
@@ -90,7 +89,7 @@ func main() {
 	// Custom usage message
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage: %s [OPTIONS] [CONTAINERFILE] [CONTEXT]\n", os.Args[0])
-		fmt.Fprintf(os.Stderr, "\nMachinefile version: %s\n", VERSION)
+		fmt.Fprintf(os.Stderr, "\nMachinefile version: %s\n", version)
 		
 		// Print each category
 		for _, category := range categories {
@@ -123,7 +122,7 @@ func main() {
 	var dockerfilePath string
 	var context string
 	predefinedArgs := make(map[string]string)
-	predefinedArgs["MACHINEFILE"] = VERSION
+	predefinedArgs["MACHINEFILE"] = version
 	predefinedArgs["BUILDKIT_SYNTAX"] = ""  // Common ARG in Containerfiles
 	predefinedArgs["BUILD_DATE"] = `"` + time.Now().UTC().Format(DATE_FORMAT) + `"`
 
