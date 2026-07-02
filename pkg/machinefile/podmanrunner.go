@@ -17,19 +17,19 @@ type PodmanRunner struct {
 
 func (pr *PodmanRunner) RunCommand(command string, userName string, envVars map[string]string) error {
 	expandedCommand := expandVariables(command, envVars)
-	podmanCommand := []string{"exec", pr.ContainerName, "sh", "-c", expandedCommand}
 
-	if len(envVars) > 0 {
-		envPrefix := ""
-		for key, value := range envVars {
-			envPrefix += fmt.Sprintf("%s=%s ", key, value)
-		}
-		podmanCommand = append([]string{"exec", pr.ContainerName, "sh", "-c", envPrefix + expandedCommand})
-	}
-	
+	args := []string{"exec"}
+
 	if userName != "" {
-		podmanCommand = append([]string{"exec", "--user", userName, pr.ContainerName, "sh", "-c", expandedCommand})
+		args = append(args, "--user", userName)
 	}
+
+	for key, value := range envVars {
+		args = append(args, "--env", fmt.Sprintf("%s=%s", key, value))
+	}
+
+	args = append(args, pr.ContainerName, "sh", "-c", expandedCommand)
+	podmanCommand := args
 
 	cmd := exec.Command(pr.getPodmanCommand(), podmanCommand...)
 	cmd.Stdout = os.Stdout

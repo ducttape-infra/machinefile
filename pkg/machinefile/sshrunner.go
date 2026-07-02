@@ -58,7 +58,7 @@ func (sr *SSHRunner) RunCommand(command string, userName string, envVars map[str
 		for key, value := range envVars {
 			envPrefix += fmt.Sprintf("%s=%s ", key, value)
 		}
-		sshCommand = envPrefix + sshCommand
+		sshCommand = envPrefix + ";" + sshCommand
 	}
 	
 	if userName != "" {
